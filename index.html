@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuliner Khas Bengkalis - Portal UMKM Negeri Junjungan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-melayu sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-gold" href="index.html">
+                <i class="bi bi-shop me-2"></i>Kuliner Bengkalis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#katalog">Katalog Kuliner</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#peta-section">Peta Wilayah</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0" id="authNavArea">
+                        <!-- Filled by script.js -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center py-5 position-relative">
+        <div class="container py-5 position-relative z-2">
+            <span class="badge bg-gold text-dark mb-3 px-3 py-2 fw-bold text-uppercase rounded-pill">Negeri Junjungan</span>
+            <h1 class="display-4 fw-bold mb-3">Portal Kuliner Khas Bengkalis, Riau</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 700px;">Pesan makanan & minuman khas Bengkalis favoritmu langsung via Website atau WhatsApp toko! Pilih opsi Pengiriman Antar atau Ambil Sendiri di toko.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#katalog" class="btn btn-gold btn-lg fw-semibold px-4 shadow">Jelajahi Kuliner</a>
+                <a href="#peta-section" class="btn btn-outline-light btn-lg fw-semibold px-4">Lihat Peta Sentra</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search & Filter Bar -->
+    <section class="py-4 bg-light border-bottom">
+        <div class="container">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-6">
+                    <div class="input-group shadow-sm">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                        <input type="text" id="searchInput" class="form-control border-start-0 ps-0" placeholder="Cari Mie Sagu, Lempuk Durian, Es Laksamana...">
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="btn-group filter-buttons flex-wrap" role="group">
+                        <button type="button" class="btn btn-outline-success active" data-filter="all">Semua</button>
+                        <button type="button" class="btn btn-outline-success" data-filter="makanan">Makanan Khas</button>
+                        <button type="button" class="btn btn-outline-success" data-filter="minuman">Minuman Khas</button>
+                        <button type="button" class="btn btn-outline-success" data-filter="oleholeh">Oleh-Oleh</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk -->
+    <main class="container my-5" id="katalog">
+        <div class="row mb-4">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <h2 class="fw-bold text-dark-melayu border-start border-4 border-gold ps-3 mb-0">Katalog Produk UMKM</h2>
+                <span class="text-muted small"><i class="bi bi-info-circle me-1"></i> Pesanan dikirim langsung ke toko penjual bersangkutan</span>
+            </div>
+        </div>
+        <div class="row g-4" id="productContainer">
+            <!-- Dynamic products injected via JS -->
+        </div>
+    </main>
+
+    <!-- Peta Wilayah Bengkalis -->
+    <section class="py-5 bg-white border-top" id="peta-section">
+        <div class="container">
+            <div class="row text-center mb-4">
+                <div class="col">
+                    <h2 class="fw-bold text-dark-melayu">Peta Sentra Kuliner & Wilayah Bengkalis</h2>
+                    <p class="text-muted">Kabupaten Bengkalis, Provinsi Riau, Indonesia</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow border-0 overflow-hidden rounded-4">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127670.36987440024!2d102.0526771!3d1.4749842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d161a0d3197177%3A0x334465492bc44365!2sBengkalis%2C%20Riau!5e0!3m2!1sid!2sid!4v1650000000000!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Order / Checkout -->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header bg-dark-melayu text-white">
+                    <h5 class="modal-title fw-bold" id="orderModalTitle"><i class="bi bi-cart-check me-2"></i>Pesan Kuliner</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="card bg-light border-0 rounded-3 p-3 mb-3">
+                        <h6 class="fw-bold text-dark mb-1" id="orderProductName">Mie Sagu Bengkalis</h6>
+                        <div class="text-muted small mb-1"><i class="bi bi-shop me-1"></i> <span id="orderStoreName">Dapur Melayu</span></div>
+                        <div class="fw-bold text-dark-melayu" id="orderProductPrice">Rp 22.000</div>
+                    </div>
+                    <form id="orderForm">
+                        <input type="hidden" id="orderProductId">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Jumlah Pesanan</label>
+                            <input type="number" class="form-control" id="orderQty" min="1" value="1" required onchange="updateOrderTotal()">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Metode Penyerahan / Pengiriman</label>
+                            <select class="form-select" id="orderDeliveryType" required>
+                                <option value="Pengiriman Kurir Lokal">Pengiriman Kurir Lokal Bengkalis</option>
+                                <option value="Ambil Sendiri di Toko">Ambil Sendiri di Toko (Takeaway)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Alamat Pengiriman / Catatan</label>
+                            <textarea class="form-control" id="orderAddressNote" rows="2" placeholder="Masukkan alamat lengkap atau waktu pengambilan..."></textarea>
+                        </div>
+                        <div class="p-3 bg-warning bg-opacity-10 rounded-3 border border-warning mb-3 d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">Total Pembayaran:</span>
+                            <span class="fw-bold fs-5 text-dark-melayu" id="orderTotalText">Rp 22.000</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-success fw-bold py-2" onclick="submitOrder('wa')">
+                                <i class="bi bi-whatsapp me-2"></i> Pesan via WhatsApp Toko
+                            </button>
+                            <button type="button" class="btn btn-gold fw-bold py-2" onclick="submitOrder('app')">
+                                <i class="bi bi-laptop me-2"></i> Pesan Langsung via Aplikasi
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Profil & Edit User / Pelanggan -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header bg-dark-melayu text-white">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-person-circle me-2"></i>Profil & Edit Akun</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="profileForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Nama Depan</label>
+                                <input type="text" class="form-control" id="profFirstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Nama Belakang</label>
+                                <input type="text" class="form-control" id="profLastName" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nomor HP / WhatsApp</label>
+                            <input type="text" class="form-control" id="profPhone" placeholder="08123456789" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Status Akun</label>
+                            <input type="text" class="form-control bg-light" id="profStatus" readonly value="Aktif (Pelanggan)">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password Baru (Biarkan kosong jika tidak diubah)</label>
+                            <input type="password" class="form-control" id="profPassword" placeholder="Password baru...">
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 fw-bold py-2">Simpan Perubahan Profil</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Registrasi Pelanggan -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header bg-dark-melayu text-white">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-person-plus me-2"></i>Daftarkan Akun Pelanggan</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="customerRegisterForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Nama Depan</label>
+                                <input type="text" class="form-control" id="regFirstName" required placeholder="Budi">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Nama Belakang</label>
+                                <input type="text" class="form-control" id="regLastName" required placeholder="Santoso">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nomor HP / WhatsApp</label>
+                            <input type="text" class="form-control" id="regPhone" required placeholder="081234567890">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password Login</label>
+                            <input type="password" class="form-control" id="regPassword" required placeholder="Minimal 6 karakter">
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 fw-bold py-2">Daftar & Langsung Masuk</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login Pelanggan -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header bg-dark-melayu text-white">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-box-arrow-in-right me-2"></i>Login Pelanggan</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="customerLoginForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nama Lengkap (Depan Belakang)</label>
+                            <input type="text" class="form-control" id="loginFullName" required placeholder="Budi Santoso">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 fw-bold py-2">Login Sekarang</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Peta Toko -->
+    <div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 overflow-hidden shadow">
+                <div class="modal-header bg-dark-melayu text-white">
+                    <h5 class="modal-title fw-bold" id="modalStoreName">Lokasi Toko</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe id="modalMapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8!2d102.1!3d1.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMjgnMTIuMCJOIDEwMsKwMDYnMDAuMCJF!5e0!3m2!1sid!2sid!4v1" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light justify-content-between">
+                    <span id="modalStoreAddress" class="text-muted small fw-semibold">Alamat Toko di Bengkalis</span>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-melayu text-white py-4 border-top border-secondary">
+        <div class="container text-center">
+            <p class="mb-1 fw-bold text-gold">Portal Kuliner Khas Bengkalis &copy; 2026</p>
+            <p class="small text-white-50 mb-0">Melestarikan Cita Rasa Negeri Junjungan, Riau, Indonesia.</p>
+            <div class="mt-3">
+                <a href="login_admin.html" class="text-white-50 text-decoration-none small me-3"><i class="bi bi-shield-lock me-1"></i>Login Admin / Super Admin</a>
+                <a href="login_seller.html" class="text-white-50 text-decoration-none small"><i class="bi bi-shop me-1"></i>Login Penjual UMKM</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
